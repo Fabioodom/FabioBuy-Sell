@@ -48,7 +48,7 @@ public class JFrame extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(0, 255, 204));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(50, 50, 50));
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("FabioBuy&Sell");
         jLabel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         gridBagConstraints = new java.awt.GridBagConstraints();
