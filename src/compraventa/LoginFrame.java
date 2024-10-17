@@ -6,6 +6,7 @@ package compraventa;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.*;
 
 public class LoginFrame extends JFrame {
 
@@ -15,52 +16,81 @@ public class LoginFrame extends JFrame {
 
     public LoginFrame() {
         setTitle("Iniciar Sesión");
-        setSize(300, 200);
+        setSize(500, 400);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         initComponents();
     }
 
     private void initComponents() {
-        JPanel panel = new JPanel();
-        panel.setLayout(null);
+        setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+
+        JLabel logoLabel = new JLabel(new ImageIcon("C:\\Users\\dam2\\Downloads\\fabiobuy_and_sell_logo_512x512.jpg"));
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridwidth = 2;
+        gbc.insets = new Insets(10, 10, 10, 10);
+        gbc.anchor = GridBagConstraints.CENTER;
+        add(logoLabel, gbc);
+
+        JLabel titleLabel = new JLabel("Iniciar Sesión");
+        titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 36));
+        titleLabel.setForeground(new Color(51, 51, 51));
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridwidth = 2;
+        add(titleLabel, gbc);
 
         JLabel userLabel = new JLabel("Usuario:");
-        userLabel.setBounds(10, 20, 80, 25);
-        panel.add(userLabel);
+        userLabel.setFont(new Font("Segoe UI", Font.PLAIN, 18));
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gbc.gridwidth = 1;
+        gbc.anchor = GridBagConstraints.WEST;
+        add(userLabel, gbc);
 
-        usernameField = new JTextField();
-        usernameField.setBounds(100, 20, 165, 25);
-        panel.add(usernameField);
+        JTextField usernameField = new JTextField(20);
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        add(usernameField, gbc);
 
         JLabel passwordLabel = new JLabel("Contraseña:");
-        passwordLabel.setBounds(10, 50, 80, 25);
-        panel.add(passwordLabel);
+        passwordLabel.setFont(new Font("Segoe UI", Font.PLAIN, 18));
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        gbc.fill = GridBagConstraints.NONE;
+        add(passwordLabel, gbc);
 
-        passwordField = new JPasswordField();
-        passwordField.setBounds(100, 50, 165, 25);
-        panel.add(passwordField);
+        JPasswordField passwordField = new JPasswordField(20);
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        add(passwordField, gbc);
 
-        loginButton = new JButton("Iniciar Sesión");
-        loginButton.setBounds(10, 80, 150, 25);
-        panel.add(loginButton);
+        JButton loginButton = new JButton("Iniciar Sesión");
+        loginButton.setBackground(new Color(70, 130, 180));
+        loginButton.setForeground(Color.WHITE);
+        loginButton.setFont(new Font("Segoe UI", Font.PLAIN, 18));
+        gbc.gridx = 0;
+        gbc.gridy = 4;
+        gbc.gridwidth = 2;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.CENTER;
+        add(loginButton, gbc);
 
-        loginButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Lógica para verificar el inicio de sesión
-                String username = usernameField.getText();
-                String password = new String(passwordField.getPassword());
+        loginButton.addActionListener(e -> {
+            String username = usernameField.getText();
+            String password = new String(passwordField.getPassword());
 
-                if (username.equals("admin") && password.equals("admin123")) {
-                    JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso");
-                    dispose();
-                } else {
-                    JOptionPane.showMessageDialog(null, "Credenciales incorrectas", "Error", JOptionPane.ERROR_MESSAGE);
-                }
+            if (username.equals("admin") && password.equals("admin123")) {
+                JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso");
+                dispose();
+                new HomeFrame().setVisible(true);  // Redirigir a HomeFrame
+            } else {
+                JOptionPane.showMessageDialog(null, "Credenciales incorrectas", "Error", JOptionPane.ERROR_MESSAGE);
             }
         });
-
-        add(panel);
     }
 }
