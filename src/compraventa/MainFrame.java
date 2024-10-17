@@ -8,12 +8,12 @@ package compraventa;
  *
  * @author dam2
  */
-public class JFrame extends javax.swing.JFrame {
+public class MainFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form JFrame
      */
-    public JFrame() {
+    public MainFrame() {
         initComponents();
     }
 
@@ -34,6 +34,8 @@ public class JFrame extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("FabioBuy&Sell");
+        setForeground(new java.awt.Color(153, 153, 153));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\dam2\\Downloads\\fabiobuy_and_sell_logo_512x512.jpg")); // NOI18N
@@ -64,6 +66,11 @@ public class JFrame extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Iniciar sesion");
         jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 0, true));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -112,8 +119,14 @@ public class JFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        RegisterFrame registerFrame = new RegisterFrame();
+        registerFrame.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        LoginFrame loginFrame = new LoginFrame();
+        loginFrame.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,7 +158,7 @@ public class JFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrame().setVisible(true);
+                new MainFrame().setVisible(true);
             }
         });
     }
