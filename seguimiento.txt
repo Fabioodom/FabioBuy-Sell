@@ -14,3 +14,10 @@ No hay label.
 -> Refactoriza (cambia) los nombres de todas las clases y objetos que uses de forma que sean exclusivos tuyos y del proyecto (en el futuro no evaluaré nada con nombres genéricos automatizados).
 -> Modifica el README.md donde sean más explicativo sobre el objetivo del proyecto.
 -> Conserva (sin usar aún el logo)
+
+2º modificación:
+Elimina la imagen, y debes tener 4 ventanas (la tercera es el JDialog):
+1-> presentación, no redimensionable (tamaño mediano), simulando la carga, y desaparece por tiempo.
+2-> login básico
+3-> Salta la principal, donde todo el menú es funcional en el sentido de mandar un mensaje por consola, y usar "Herramientas" con una opción configuración con un JDialog modificado. Los cambios del look y los productos que vendes, debe poder cargar los datos en el arranque.
+Todo los métodos y clases documentados.
