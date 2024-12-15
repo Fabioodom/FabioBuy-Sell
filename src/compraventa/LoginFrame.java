@@ -26,7 +26,7 @@ public class LoginFrame extends JFrame {
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 
-        JLabel logoLabel = new JLabel(new ImageIcon("C:\\Users\\dam2\\Downloads\\fabiobuy_and_sell_logo_512x512.jpg"));
+        JLabel logoLabel = new JLabel(new ImageIcon("C:\\Users\\Fabio Dominguez\\Documents\\NetBeansProjects\\FabioBuy-Sell\\src\\fabiobuy_and_sell_logo_512x512.jpg"));
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.gridwidth = 2;

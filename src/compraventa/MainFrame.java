@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package compraventa;
-
+import java.awt.*;
+import javax.swing.*;
 /**
  *
  * @author dam2
@@ -38,7 +39,7 @@ public class MainFrame extends javax.swing.JFrame {
         setForeground(new java.awt.Color(153, 153, 153));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\dam2\\Downloads\\fabiobuy_and_sell_logo_512x512.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fabio Dominguez\\Documents\\NetBeansProjects\\FabioBuy-Sell\\src\\fabiobuy_and_sell_logo_512x512.jpg")); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -132,6 +133,8 @@ public class MainFrame extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        SplashScreen splash = new SplashScreen();
+        splash.showSplash();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -157,7 +160,8 @@ public class MainFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainFrame().setVisible(true);
+            MainFrame mainFrame = new MainFrame();
+            mainFrame.setVisible(true);
             }
         });
     }
