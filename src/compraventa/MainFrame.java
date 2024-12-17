@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package compraventa;
+import compraventa.views.LoginFrame;
+import compraventa.views.RegisterFrame;
 import java.awt.*;
 import javax.swing.*;
 /**
@@ -39,7 +41,7 @@ public class MainFrame extends javax.swing.JFrame {
         setForeground(new java.awt.Color(153, 153, 153));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fabio Dominguez\\Documents\\NetBeansProjects\\FabioBuy-Sell\\src\\fabiobuy_and_sell_logo_512x512.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/fabiobuy_and_sell_logo_512x512.jpg"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;

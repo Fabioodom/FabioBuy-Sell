@@ -23,7 +23,7 @@ import javax.swing.*;
         content.setLayout(new BorderLayout());
 
         // Imagen para el Splash Screen
-        JLabel splashImage = new JLabel(new ImageIcon("C:\\Users\\Fabio Dominguez\\Documents\\NetBeansProjects\\FabioBuy-Sell\\src\\splash.png"));
+        JLabel splashImage = new JLabel(new ImageIcon(getClass().getResource("/images/splash.png")));
         content.add(splashImage, BorderLayout.CENTER);
 
         // Texto opcional en la parte inferior
